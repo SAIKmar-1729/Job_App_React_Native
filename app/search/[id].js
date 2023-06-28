@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { ActivityIndicator, FlatList, Image, TouchableOpacity, View } from 'react-native'
 import { Stack, useRouter, useLocalSearchParams } from 'expo-router'
 import { Text, SafeAreaView } from 'react-native'
-// import {RAPID_API_KEY} from 'react-native-dotenv';
+import {RAPID_API_KEY} from '@env';
 import axios from 'axios'
 
 import { ScreenHeaderBtn, NearbyJobCard } from '../../components'
@@ -27,7 +27,7 @@ const JobSearch = () => {
                 method: "GET",
                 url: `https://jsearch.p.rapidapi.com/search`,
                 headers: {
-                    "X-RapidAPI-Key": '155a34d627msh196dc2a69785d4bp15cf8ejsn919efdadf7dc',
+                    "X-RapidAPI-Key": RAPID_API_KEY,
                     "X-RapidAPI-Host": "jsearch.p.rapidapi.com",
                 },
                 params: {
